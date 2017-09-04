@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             final Document query = new Document();
+            //for substring and case insensitive search
             query.append("name", new Document("$regex",currentRestaurantName).append("$options","i"));
             Log.i(TAG, "Restaurant search query:" + query);
 
