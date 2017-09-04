@@ -104,7 +104,8 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
 
-            final Document query = new Document( "name",currentRestaurantName);
+            final Document query = new Document();
+            query.append("name", new Document("$regex",currentRestaurantName).append("$options","i"));
             Log.i(TAG, "Restaurant search query:" + query);
 
             // This code block is a simple find() command on the "restaurants" collection in the "guidebook" database.
